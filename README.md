@@ -1,9 +1,5 @@
-### This repository is no longer maintained!
 
-
----
-
-# node-js-sample
+### nodejs101
 
 A barebones Node.js app using [Express 4](http://expressjs.com/).
 
