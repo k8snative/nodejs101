@@ -1,6 +1,8 @@
 pipeline {
     agent {
-        label 'localmachine'
+        node {
+            label 'localmachine'
+        }
     }
  
     stages {
