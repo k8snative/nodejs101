@@ -1,13 +1,11 @@
 pipeline {
-    agent none // Remove the agent node declaration here
+    agent {
+        label 'localmachine'
+    }
 
     stages {
         stage('Selecting Node') {
-            agent {
-                node {
-                    label 'localmachine'
-                }
-            }
+            
             steps {
                 script {
                     if (env.BRANCH_NAME == 'develop') {
