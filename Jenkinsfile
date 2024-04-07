@@ -1,29 +1,42 @@
-pipeline {
-    agent {
-        label localmachine
-    }
+// pipeline {
+//     agent {
+//         label localmachine
+//     }
  
+//     stages {
+//         stage('Deploying on Develop, QA and UAT') {
+//             steps {
+//                 script {
+//                     if (env.BRANCH_NAME == 'develop') {
+//                         dir('/home/farrukh/application-nodejs/deployment-develop') {
+//                             sh './deployment_script.sh'
+//                         }
+//                     } else if (env.BRANCH_NAME == 'qa') {
+//                         dir('/home/farrukh/application-nodejs/deployment-qa') {
+//                             sh './deployment_script.sh'
+//                         }
+//                     } else if (env.BRANCH_NAME == 'uat') {
+//                         dir('/home/farrukh/application-nodejs/deployment-uat') {
+//                             sh './deployment_script.sh'
+//                         }
+//                     } else {
+//                         echo "Skipping script execution for branch ${env.BRANCH_NAME}"
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+pipeline {
+    agent any
+
     stages {
-        stage('Deploying on Develop, QA and UAT') {
+        stage('Test Node Selection') {
             steps {
-                script {
-                    if (env.BRANCH_NAME == 'develop') {
-                        dir('/home/farrukh/application-nodejs/deployment-develop') {
-                            sh './deployment_script.sh'
-                        }
-                    } else if (env.BRANCH_NAME == 'qa') {
-                        dir('/home/farrukh/application-nodejs/deployment-qa') {
-                            sh './deployment_script.sh'
-                        }
-                    } else if (env.BRANCH_NAME == 'uat') {
-                        dir('/home/farrukh/application-nodejs/deployment-uat') {
-                            sh './deployment_script.sh'
-                        }
-                    } else {
-                        echo "Skipping script execution for branch ${env.BRANCH_NAME}"
-                    }
-                }
+                echo "Running on ${env.NODE_NAME}"
             }
         }
     }
 }
+
