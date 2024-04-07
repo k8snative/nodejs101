@@ -1,42 +1,32 @@
-// pipeline {
-//     agent {
-//         label localmachine
-//     }
- 
-//     stages {
-//         stage('Deploying on Develop, QA and UAT') {
-//             steps {
-//                 script {
-//                     if (env.BRANCH_NAME == 'develop') {
-//                         dir('/home/farrukh/application-nodejs/deployment-develop') {
-//                             sh './deployment_script.sh'
-//                         }
-//                     } else if (env.BRANCH_NAME == 'qa') {
-//                         dir('/home/farrukh/application-nodejs/deployment-qa') {
-//                             sh './deployment_script.sh'
-//                         }
-//                     } else if (env.BRANCH_NAME == 'uat') {
-//                         dir('/home/farrukh/application-nodejs/deployment-uat') {
-//                             sh './deployment_script.sh'
-//                         }
-//                     } else {
-//                         echo "Skipping script execution for branch ${env.BRANCH_NAME}"
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-
 pipeline {
-    agent any
-
+    agent {
+        label localmachine
+    }
+ 
     stages {
-        stage('Test Node Selection') {
+        stage('Deploying on Develop, QA and UAT') {
             steps {
-                echo "Running on ${env.NODE_NAME}"
+                script {
+                    if (env.BRANCH_NAME == 'develop') {
+                        dir('/home/farrukh/application-nodejs/deployment-develop') {
+                            sh './deployment_script.sh'
+                        }
+                    } else if (env.BRANCH_NAME == 'qa') {
+                        dir('/home/farrukh/application-nodejs/deployment-qa') {
+                            sh './deployment_script.sh'
+                        }
+                    } else if (env.BRANCH_NAME == 'uat') {
+                        dir('/home/farrukh/application-nodejs/deployment-uat') {
+                            sh './deployment_script.sh'
+                        }
+                    } else {
+                        echo "Skipping script execution for branch ${env.BRANCH_NAME}"
+                    }
+                }
             }
         }
     }
 }
+
+
 
