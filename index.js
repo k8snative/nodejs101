@@ -5,7 +5,7 @@ app.set('port', (process.env.PORT || 5001))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
-  response.send('Deployed via Jenkins pipeline test 2')
+  response.send('Deployed via Jenkins pipeline on AWS ec2 instance, for uat')
 })
 
 app.listen(app.get('port'), function() {

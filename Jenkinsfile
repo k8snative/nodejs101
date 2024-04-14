@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'localmachine'
+        label 'ec2instance'
     }
  
     stages {
@@ -16,7 +16,7 @@ pipeline {
                             sh './deployment_script.sh'
                         }
                     } else if (env.BRANCH_NAME == 'uat') {
-                        dir('/home/farrukh/application-nodejs/deployment-uat') {
+                        dir('/var/www/application-nodejs/deployment-uat') {
                             sh './deployment_script.sh'
                         }
                     } else {
