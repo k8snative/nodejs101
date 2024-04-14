@@ -45,8 +45,11 @@ You can find your public key using command
 
 Then copy jenkins public private keys to EC2 instance  
 cd to jenkins folder  
+cat id_rsa.pub and copy the key and paste in authorize_keys of EC2 instance. 
 scp id_rsa root@ec2-instance-ip:/root/.ssh/  
 scp id_rsa.pub root@ec2-instance-ip:/root/.ssh/  
+
+
 
 Go to your EC2 instance and create following directory  
 mkdir -p /var/www/application-nodejs/  
@@ -81,6 +84,8 @@ Finally change pm2 process name if needed, as in our example it is node101Dev an
 node101Uat.
 
 Once set you are ready to deploy it using Jenkins pipeline.
+
+### Configure NGINX to browse site on port 80
 
 
 
