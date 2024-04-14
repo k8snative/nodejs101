@@ -15,3 +15,7 @@ npm start
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
 
+### Conceptual Diagram.
+![GitHub Logo](https://github.com/k8snative/nodejs101/blob/develop/Nodejs101-jenkins-slave.png)
+
+
