@@ -22,10 +22,10 @@ Your app should now be running on [localhost:5000](http://localhost:5000/).
 
 Use following in user data while creating EC2 instance
 
-#!/bin/bash
-apt update
-apt install -y curl
-apt install default-jre -y
+#!/bin/bash  
+apt update  
+apt install -y curl  
+apt install default-jre -y  
 
 Once instance has been created use following to install nvm, nodejs and pm2
 
