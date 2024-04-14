@@ -29,7 +29,8 @@ apt install default-jre -y
 
 Once instance has been created use following to install nvm, nodejs and pm2
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-source ~/.bashrc
-nvm install node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash  
+
+source ~/.bashrc  
+nvm install node  
 npm install pm2@latest -g
