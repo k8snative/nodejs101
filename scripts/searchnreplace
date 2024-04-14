@@ -1,0 +1,6 @@
+/home/farrukh/application-nodejs/deployment-develop/
+/var/www/application-nodejs/deployment-uat/
+
+:%s/search_string/replacement_string/g
+
+:%s#/home/farrukh/application-nodejs/deployment-develop/#/var/www/application-nodejs/deployment-uat/#g
