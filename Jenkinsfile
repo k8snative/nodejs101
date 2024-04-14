@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'ec2instance'
+        label 'ec2server'
     }
  
     stages {
